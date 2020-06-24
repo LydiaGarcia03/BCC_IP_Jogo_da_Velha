@@ -1,9 +1,16 @@
 
 public class JogoDaVelha_Mapa {
+	
+	private char[][] mapa;
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	public int sortear(int inicio, int fim) { return 0;}
+	
+	public void limpaMapa() {}
+	
+	public void desenha(int jogada) {}
+	
+	public boolean jogar(int l, int c, char jogador) { return false;}
+	
+	public boolean ganhou(char jogador) { return false;}
+	
 }

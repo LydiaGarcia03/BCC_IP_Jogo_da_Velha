@@ -1,9 +1,12 @@
+import java.util.Scanner;
 
 public class JogoDaVelha_Jogador {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
+	private JogoDaVelha_Mapa mapa;
+	private char letra;
+	
+	public JogoDaVelha_Jogador(JogoDaVelha_Mapa mapa) {}
+	
+	public boolean joga(Scanner teclado) { return false;}
+	
 }
