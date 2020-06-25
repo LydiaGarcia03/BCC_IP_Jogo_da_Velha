@@ -10,9 +10,7 @@ public class JogoDaVelha {
 		int contaJogadas = 0;
 		
 		jogoMapa.limpaMapa();
-		
 	
-		
 		while(contaJogadas <= 9) {
 			
 		}
@@ -23,7 +21,9 @@ public class JogoDaVelha {
 	public static void main(String[] args) {
 
 		Scanner teclado = new Scanner(System.in);
-
+		jogoMapa = new JogoDaVelha_Mapa();
+		
+		jogoMapa.desenha(1);
 		
 		teclado.close();
 	}
