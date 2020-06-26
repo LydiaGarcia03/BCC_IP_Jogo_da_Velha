@@ -2,31 +2,38 @@ import java.util.Scanner;
 
 public class JogoDaVelha {
 
-	private static JogoDaVelha_Mapa jogoMapa;
-	private JogoDaVelha_PC jogoPc;
-	private JogoDaVelha_Jogador jogoJogador;
+    private static JogoDaVelha_Mapa jogoMapa;
+    private static JogoDaVelha_PC jogoPc;
+    private static JogoDaVelha_Jogador jogoJogador;
 
-	protected void jogar(Scanner teclado) {
-		int contaJogadas = 0;
-		
-		jogoMapa.limpaMapa();
-	
-		while(contaJogadas <= 9) {
-			
-		}
+    protected static void jogar(Scanner teclado) {
+        jogoMapa.limpaMapa();
+        jogoMapa.desenha(1);
 
-		contaJogadas++;
-	}
+        int jogadorInicial = jogoMapa.sortear(0, 2);
+        boolean pcJogando = jogadorInicial == 0;
 
-	public static void main(String[] args) {
+        for (int contaJogadas = 1; contaJogadas <= 9; contaJogadas++) {
+            if (pcJogando) {
+                System.out.println("PC");
+            } else {
+                System.out.println("Jogador");
+            }
 
-		Scanner teclado = new Scanner(System.in);
-		jogoMapa = new JogoDaVelha_Mapa();
-		
-		jogoMapa.desenha(1);
-		
-		teclado.close();
-	}
+            pcJogando = !pcJogando;
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+
+        jogoMapa = new JogoDaVelha_Mapa();
+        jogoPc = new JogoDaVelha_PC(jogoMapa);
+        jogoJogador = new JogoDaVelha_Jogador(jogoMapa);
+
+        jogar(teclado);
+        teclado.close();
+    }
 }
 
 	

@@ -4,7 +4,7 @@ public class JogoDaVelha_Mapa {
 	private char[][] mapa = new char[3][3];
 
 	// Método sortear dado pelo Dalton
-	private static int sortear(int inicio, int fim) {
+	int sortear(int inicio, int fim) {
 		return (int) ((Math.random() * fim) - inicio);
 	}
 	
@@ -36,10 +36,12 @@ public class JogoDaVelha_Mapa {
 	}
 	
 	public boolean jogar(int l, int c, char jogador) { 
-		
-		
-		
-		return false;
+		if (mapa[l][c] == ' ') {
+			mapa[l][c] = jogador;
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	public boolean ganhou(char jogador) { return false;}
