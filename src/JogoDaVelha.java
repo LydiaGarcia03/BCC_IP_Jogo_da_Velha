@@ -8,14 +8,17 @@ public class JogoDaVelha {
 
     protected static void jogar(Scanner teclado) {
         jogoMapa.limpaMapa();
-        jogoMapa.desenha(1);
 
         int jogadorInicial = jogoMapa.sortear(0, 2);
         boolean pcJogando = jogadorInicial == 0;
 
-        for (int contaJogadas = 1; contaJogadas <= 9; contaJogadas++) {
+        for (int i = 1; i <= 9; i++) {
+            jogoMapa.desenha(i);
             if (pcJogando) {
                 System.out.println("PC");
+                while (!jogoPc.joga()) {
+                    jogoPc.joga();
+                }
             } else {
                 System.out.println("Jogador");
                 while (!jogoJogador.joga(teclado)) {

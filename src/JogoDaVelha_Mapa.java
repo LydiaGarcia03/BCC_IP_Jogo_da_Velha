@@ -1,23 +1,22 @@
 
 public class JogoDaVelha_Mapa {
 	
-	private char[][] mapa = new char[3][3];
+	private final char[][] mapa = new char[3][3];
 
 	// Método sortear dado pelo Dalton
 	int sortear(int inicio, int fim) {
 		return (int) ((Math.random() * fim) - inicio);
 	}
 	
-	public void limpaMapa() {}
-	
-	public void desenha(int jogada) {
-		
+	public void limpaMapa() {
 		for(int i = 0; i < 3; i++) {
 			for(int j = 0; j < 3; j++) {
 				mapa[i][j] = ' ';
 			}
 		}
-		
+	}
+	
+	public void desenha(int jogada) {
 		System.out.println("\n\t\t    JOGADA 0" + jogada);
 		System.out.println("|===============================================|");
 		for(int i = 0; i < 3; i++) {
