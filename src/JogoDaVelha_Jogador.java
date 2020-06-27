@@ -19,8 +19,7 @@ public class JogoDaVelha_Jogador {
             System.out.println("Entrada fora dos limites do mapa!");
             return false;
         } else {
-            boolean sucesso = mapa.jogar(linha, coluna, 'X');
-            if (sucesso) {
+            if (mapa.jogar(linha, coluna, 'X')) {
                 return true;
             } else {
                 System.out.println("A posição já está ocupada!");

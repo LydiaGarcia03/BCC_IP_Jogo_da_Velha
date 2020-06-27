@@ -18,8 +18,7 @@ public class JogoDaVelha {
                 System.out.println("PC");
             } else {
                 System.out.println("Jogador");
-                boolean sucesso = jogoJogador.joga(teclado);
-                while (!sucesso) {
+                while (!jogoJogador.joga(teclado)) {
                     jogoJogador.joga(teclado);
                 }
             }
