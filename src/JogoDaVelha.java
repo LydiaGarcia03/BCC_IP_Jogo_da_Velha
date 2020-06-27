@@ -16,13 +16,15 @@ public class JogoDaVelha {
             jogoMapa.desenha(i);
             if (pcJogando) {
                 System.out.println("PC");
-                while (!jogoPc.joga()) {
-                    jogoPc.joga();
+                boolean flag = jogoPc.joga();
+                while (!flag) {
+                    flag = jogoPc.joga();
                 }
             } else {
                 System.out.println("Jogador");
-                while (!jogoJogador.joga(teclado)) {
-                    jogoJogador.joga(teclado);
+                boolean flag = jogoJogador.joga(teclado);
+                while (!flag) {
+                    flag = jogoJogador.joga(teclado);
                 }
             }
             pcJogando = !pcJogando;
