@@ -2,16 +2,22 @@
 public class JogoDaVelha_PC {
 
     private final JogoDaVelha_Mapa mapa;
-    private char letra;
+    private char letra = 'O';
 
     public JogoDaVelha_PC(JogoDaVelha_Mapa mapa) {
         this.mapa = mapa;
     }
 
     public boolean joga() {
+   
         int linha = mapa.sortear(0, 3);
         int coluna = mapa.sortear(0, 3);
-
-        return mapa.jogar(linha, coluna, 'O');
+    	
+        System.out.println("PC");
+        
+        System.out.println("Linha: " + linha);
+        System.out.println("Coluna: " + coluna);
+        
+        return mapa.jogar(linha, coluna, letra);
     }
 }

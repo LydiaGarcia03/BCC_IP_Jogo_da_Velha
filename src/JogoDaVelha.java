@@ -7,21 +7,28 @@ public class JogoDaVelha {
     private static JogoDaVelha_Jogador jogoJogador;
 
     protected static void jogar(Scanner teclado) {
+    	
         jogoMapa.limpaMapa();
 
         int jogadorInicial = jogoMapa.sortear(0, 2);
         boolean pcJogando = jogadorInicial == 0;
 
-        for (int i = 1; i <= 9; i++) {
+        for (int i = 0; i <= 9; i++) {
+        	
+        	if(i == 0) 
+        		System.out.println("\t\t  JOGO DA VELHA");
+        	
             jogoMapa.desenha(i);
+            
             if (pcJogando) {
-                System.out.println("PC");
+
                 boolean flag = jogoPc.joga();
+                
                 while (!flag) {
                     flag = jogoPc.joga();
                 }
+                
             } else {
-                System.out.println("Jogador");
                 boolean flag = jogoJogador.joga(teclado);
                 while (!flag) {
                     flag = jogoJogador.joga(teclado);
@@ -32,6 +39,7 @@ public class JogoDaVelha {
     }
 
     public static void main(String[] args) {
+    	
         Scanner teclado = new Scanner(System.in);
 
         jogoMapa = new JogoDaVelha_Mapa();
@@ -39,8 +47,11 @@ public class JogoDaVelha {
         jogoJogador = new JogoDaVelha_Jogador(jogoMapa);
 
         jogar(teclado);
+        
         teclado.close();
+        
     }
+    
 }
 
 	
