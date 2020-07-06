@@ -6,12 +6,12 @@ public class JogoDaVelha {
     private static JogoDaVelha_PC jogoPc;
     private static JogoDaVelha_Jogador jogoJogador;
 
-    protected static void jogar(Scanner teclado) {
+    private static void jogar(Scanner teclado) {
     	
     	char opJogar = 'S';
     	
     	do {
-    		
+
 	        jogoMapa.limpaMapa();
 	
 	        int jogadorInicial = jogoMapa.sortear(0, 2);
@@ -30,15 +30,15 @@ public class JogoDaVelha {
 	            jogoMapa.desenha(i);
 	            
 	            if (pcJogando) {
-	            	
-	            	jogoPc.joga();
-	
+	            	boolean flag = jogoPc.joga();
+	            	while (!flag)
+						flag = jogoPc.joga();
+
 	                if(jogoMapa.ganhou('O')) {
 	                	jogoMapa.desenha(i);
 	                	System.out.println("\nPC ganhou!");
 	                	break;
 	                }
-	                
 	            } else {
 	            	
 	            	boolean flag = jogoJogador.joga(teclado);
@@ -51,11 +51,9 @@ public class JogoDaVelha {
 						System.out.println("\nJogador ganhou!");
 						break;
 	            	}
-	            	
 	            }
 	          
 	            pcJogando = !pcJogando;
-	          
 	        }
     	
 	        System.out.println("\nDeseja jogar novamente? (s/n)");
@@ -64,7 +62,6 @@ public class JogoDaVelha {
     	} while(opJogar == 'S' || opJogar == 's');
     	
     	System.out.print("\n\n\t\t FIM JOGO DA VELHA");
-    
     }
 
     public static void main(String[] args) {
@@ -78,9 +75,7 @@ public class JogoDaVelha {
         jogar(teclado);
         
         teclado.close();
-        
     }
-    
 }
 
 	

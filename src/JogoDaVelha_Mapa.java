@@ -45,36 +45,29 @@ public class JogoDaVelha_Mapa {
 				System.out.println("║ ──────────────┼───────────────┼────────────── ║");				
 		}
 		System.out.println("╚═══════════════════════════════════════════════╝\n");
-		
 	}
 	
 	public boolean jogar(int l, int c, char jogador) { 
 		
 		if (mapa[l][c] == ' ') {
-			
+
 			mapa[l][c] = jogador;
 			return true;				
 		} 
 		else {
 			return false;
 		}
-		
 	}
 	
-	public boolean ganhou(char jogador) { 
-		
-		if((mapa[0][0] == jogador && mapa[0][1] == jogador && mapa[0][2] == jogador)
-		|| (mapa[1][0] == jogador && mapa[1][1] == jogador && mapa[1][2] == jogador)
-		|| (mapa[2][0] == jogador && mapa[2][1] == jogador && mapa[2][2] == jogador)
-		|| (mapa[0][0] == jogador && mapa[1][0] == jogador && mapa[2][0] == jogador)
-		|| (mapa[0][1] == jogador && mapa[1][1] == jogador && mapa[2][1] == jogador)
-		|| (mapa[0][2] == jogador && mapa[1][2] == jogador && mapa[2][2] == jogador)
-		|| (mapa[0][0] == jogador && mapa[1][1] == jogador && mapa[2][2] == jogador)
-		|| (mapa[0][2] == jogador && mapa[1][1] == jogador && mapa[2][0] == jogador)) {
-			return true;
-		}
-		
-		return false;
+	public boolean ganhou(char jogador) {
+
+		return (mapa[0][0] == jogador && mapa[0][1] == jogador && mapa[0][2] == jogador)
+				|| (mapa[1][0] == jogador && mapa[1][1] == jogador && mapa[1][2] == jogador)
+				|| (mapa[2][0] == jogador && mapa[2][1] == jogador && mapa[2][2] == jogador)
+				|| (mapa[0][0] == jogador && mapa[1][0] == jogador && mapa[2][0] == jogador)
+				|| (mapa[0][1] == jogador && mapa[1][1] == jogador && mapa[2][1] == jogador)
+				|| (mapa[0][2] == jogador && mapa[1][2] == jogador && mapa[2][2] == jogador)
+				|| (mapa[0][0] == jogador && mapa[1][1] == jogador && mapa[2][2] == jogador)
+				|| (mapa[0][2] == jogador && mapa[1][1] == jogador && mapa[2][0] == jogador);
 	}
-	
 }

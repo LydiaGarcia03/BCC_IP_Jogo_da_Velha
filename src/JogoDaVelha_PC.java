@@ -14,20 +14,13 @@ public class JogoDaVelha_PC {
         int coluna = mapa.sortear(0, 3);
     	  
         boolean flag = mapa.jogar(linha, coluna, letra);
-        
-        while(flag == false) {
-        	linha = mapa.sortear(0, 3);
-            coluna = mapa.sortear(0, 3);
-            
-        	flag = mapa.jogar(linha, coluna, letra);
+
+        if (flag) {
+            System.out.println("PC");
+            System.out.println("Linha: " + linha);
+            System.out.println("Coluna: " + coluna);
         }
         
-        System.out.println("PC");    		
-        
-        System.out.println("Linha: " + linha);
-        System.out.println("Coluna: " + coluna);
-        
         return flag;
-        
     }
 }
