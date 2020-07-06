@@ -43,8 +43,8 @@ public class JogoDaVelha {
 	            	
 	            	boolean flag = jogoJogador.joga(teclado);
 	            	
-	            	if(!flag)
-	            		jogoJogador.joga(teclado);
+	            	while (!flag)
+	            		flag = jogoJogador.joga(teclado);
 	            	
 	            	if(jogoMapa.ganhou('X')) {
 	            		jogoMapa.desenha(i);
