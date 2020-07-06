@@ -59,9 +59,11 @@ public class JogoDaVelha {
 	        System.out.println("\nDeseja jogar novamente? (s/n)");
 	        opJogar = teclado.next().charAt(0);
 	        
+	        System.out.println("\n\n═════════════════════════════════════════════════\n");
+	        
     	} while(opJogar == 'S' || opJogar == 's');
     	
-    	System.out.print("\n\n\t\t FIM JOGO DA VELHA");
+    	System.out.print("\t\t FIM JOGO DA VELHA");
     }
 
     public static void main(String[] args) {
