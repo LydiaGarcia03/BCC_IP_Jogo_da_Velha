@@ -17,7 +17,6 @@ public class JogoDaVelha_Mapa {
 	}
 	
 	public void desenha(int jogada) {
-//		System.out.println("\n\t\t    JOGADA 0" + jogada);
 //		System.out.println("|===============================================|");
 //		for(int i = 0; i < 3; i++) {
 //			System.out.print("|");
@@ -32,6 +31,7 @@ public class JogoDaVelha_Mapa {
 //		}
 //		System.out.println("|===============================================	");
 
+		System.out.println("\n\t\t    JOGADA 0" + jogada);
 		System.out.println("\n╔═══════════════════════════════════════════════╗");
 		for(int i = 0; i < 3; i++) {
 			System.out.print("║");
@@ -53,19 +53,12 @@ public class JogoDaVelha_Mapa {
 		if (mapa[l][c] == ' ') {
 			
 			mapa[l][c] = jogador;
-			
-			if(ganhou(jogador)) {
-				if(jogador == 'X')
-					System.out.println("\nJogador ganhou!");
-				else
-					System.out.println("\nPC ganhou!");
-			}
-			
-			return true;			
-			
-		} else {
+			return true;				
+		} 
+		else {
 			return false;
 		}
+		
 	}
 	
 	public boolean ganhou(char jogador) { 
