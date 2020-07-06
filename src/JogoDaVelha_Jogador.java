@@ -19,8 +19,8 @@ public class JogoDaVelha_Jogador {
         System.out.print("Digite a coluna: ");
         int coluna = teclado.nextInt();
 
-        if (linha > 2 || coluna > 2) {
-            System.out.println("Entrada fora dos limites do mapa!");
+        if (linha > 2 || linha < 0 || coluna > 2 || coluna < 0) {
+            System.out.println("\nEntrada fora dos limites do mapa!\n");
             return false;
         } 
         else {
@@ -29,7 +29,7 @@ public class JogoDaVelha_Jogador {
                 return true;
             } 
             else {
-                System.out.println("A posição já está ocupada!");
+                System.out.println("\nA posição já está ocupada!\n");
                 return false;
             }
         }

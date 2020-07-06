@@ -8,34 +8,63 @@ public class JogoDaVelha {
 
     protected static void jogar(Scanner teclado) {
     	
-        jogoMapa.limpaMapa();
-
-        int jogadorInicial = jogoMapa.sortear(0, 2);
-        boolean pcJogando = jogadorInicial == 0;
-
-        for (int i = 0; i <= 9; i++) {
-        	
-        	if(i == 0) 
-        		System.out.println("\t\t  JOGO DA VELHA");
-        	
-            jogoMapa.desenha(i);
-            
-            if (pcJogando) {
-
-                boolean flag = jogoPc.joga();
-                
-                while (!flag) {
-                    flag = jogoPc.joga();
-                }
-                
-            } else {
-                boolean flag = jogoJogador.joga(teclado);
-                while (!flag) {
-                    flag = jogoJogador.joga(teclado);
-                }
-            }
-            pcJogando = !pcJogando;
-        }
+    	char opJogar = 'S';
+    	
+    	do {
+    		
+	        jogoMapa.limpaMapa();
+	
+	        int jogadorInicial = jogoMapa.sortear(0, 2);
+	        boolean pcJogando = jogadorInicial == 0;
+	
+	        for (int i = 0; i <= 9; i++) {
+	        	
+	        	if(i == 0) 
+	        		System.out.println("\t\t  JOGO DA VELHA");
+	        	
+	        	if(i == 9) {
+	        		System.out.println("\nEmpate!");
+	        		break;
+	        	}
+	        	
+	            jogoMapa.desenha(i);
+	            
+	            if (pcJogando) {
+	            	
+	            	jogoPc.joga();
+	
+	                if(jogoMapa.ganhou('O')) {
+	                	jogoMapa.desenha(i);
+	                	System.out.println("\nPC ganhou!");
+	                	break;
+	                }
+	                
+	            } else {
+	            	
+	            	boolean flag = jogoJogador.joga(teclado);
+	            	
+	            	if(!flag)
+	            		jogoJogador.joga(teclado);
+	            	
+	            	if(jogoMapa.ganhou('X')) {
+	            		jogoMapa.desenha(i);
+						System.out.println("\nJogador ganhou!");
+						break;
+	            	}
+	            	
+	            }
+	          
+	            pcJogando = !pcJogando;
+	          
+	        }
+    	
+	        System.out.println("\nDeseja jogar novamente? (s/n)");
+	        opJogar = teclado.next().charAt(0);
+	        
+    	} while(opJogar == 'S' || opJogar == 's');
+    	
+    	System.out.print("\n\n\t\t FIM JOGO DA VELHA");
+    
     }
 
     public static void main(String[] args) {

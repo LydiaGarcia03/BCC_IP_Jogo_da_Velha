@@ -12,12 +12,22 @@ public class JogoDaVelha_PC {
    
         int linha = mapa.sortear(0, 3);
         int coluna = mapa.sortear(0, 3);
-    	
-        System.out.println("PC");
+    	  
+        boolean flag = mapa.jogar(linha, coluna, letra);
+        
+        while(flag == false) {
+        	linha = mapa.sortear(0, 3);
+            coluna = mapa.sortear(0, 3);
+            
+        	flag = mapa.jogar(linha, coluna, letra);
+        }
+        
+        System.out.println("PC");    		
         
         System.out.println("Linha: " + linha);
         System.out.println("Coluna: " + coluna);
         
-        return mapa.jogar(linha, coluna, letra);
+        return flag;
+        
     }
 }
