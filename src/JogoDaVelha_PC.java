@@ -16,9 +16,14 @@ public class JogoDaVelha_PC {
         boolean flag = mapa.jogar(linha, coluna, letra);
 
         if (flag) {
+        	
             System.out.println("PC");
             System.out.println("Linha: " + linha);
             System.out.println("Coluna: " + coluna);
+
+            if(mapa.ganhou(letra)) 
+            	System.out.println("\nPC ganhou!");
+            	
         }
         
         return flag;
