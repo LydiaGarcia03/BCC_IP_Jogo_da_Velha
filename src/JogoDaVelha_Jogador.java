@@ -26,6 +26,10 @@ public class JogoDaVelha_Jogador {
         else {
         	
             if (mapa.jogar(linha, coluna, letra)) {
+            	
+            	if(mapa.ganhou(letra)) 
+            		System.out.println("\nJogador ganhou!");
+            	
                 return true;
             } 
             else {
