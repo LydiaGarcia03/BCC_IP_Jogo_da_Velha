@@ -12,10 +12,9 @@ public class JogoDaVelha_Jogador {
     public boolean joga(Scanner teclado) {
 
         System.out.println("Jogador");
-
         int linha;
         int coluna;
-
+        //Forçando entrar no loop
         boolean flag = false;
 
         while (!flag) {
@@ -27,6 +26,7 @@ public class JogoDaVelha_Jogador {
 
             if (linha > 2 || linha < 0 || coluna > 2 || coluna < 0) {
                 System.out.println("\nEntrada fora dos limites do mapa!\n");
+                //Continua no loop até o jogador fazer uma jogada válida
                 flag = false;
             } else {
                 flag = mapa.jogar(linha, coluna, letra);

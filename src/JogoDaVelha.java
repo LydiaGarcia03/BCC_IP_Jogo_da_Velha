@@ -31,12 +31,13 @@ public class JogoDaVelha {
 
                 if (pcJogando) {
                     if (jogoPc.joga()) {
+                        //Ganhou
                         jogoMapa.desenha(i);
                         break;
                     }
                 } else {
-
                     if (jogoJogador.joga(teclado)) {
+                        //Ganhou
                         jogoMapa.desenha(i);
                         break;
                     }

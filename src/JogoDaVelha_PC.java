@@ -9,13 +9,14 @@ public class JogoDaVelha_PC {
     }
 
     public boolean joga() {
-   
+
         int linha = mapa.sortear(0, 3);
         int coluna = mapa.sortear(0, 3);
-    	  
+        //Tentativa inicial
         boolean flag = mapa.jogar(linha, coluna, letra);
 
         while (!flag) {
+            //Loop até que o pc faça uma jogada válida
             linha = mapa.sortear(0, 3);
             coluna = mapa.sortear(0, 3);
             flag = mapa.jogar(linha, coluna, letra);
