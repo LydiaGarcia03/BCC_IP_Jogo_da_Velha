@@ -50,7 +50,6 @@ public class JogoDaVelha_Mapa {
 	public boolean jogar(int l, int c, char jogador) { 
 		
 		if (mapa[l][c] == ' ') {
-
 			mapa[l][c] = jogador;
 			return true;				
 		} 
