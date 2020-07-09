@@ -10,32 +10,37 @@ public class JogoDaVelha_Jogador {
     }
 
     public boolean joga(Scanner teclado) {
-    	
-    	System.out.println("Jogador");
-    	
-        System.out.print("Digite a linha: ");
-        int linha = teclado.nextInt();
-        
-        System.out.print("Digite a coluna: ");
-        int coluna = teclado.nextInt();
 
-        if (linha > 2 || linha < 0 || coluna > 2 || coluna < 0) {
-            System.out.println("\nEntrada fora dos limites do mapa!\n");
-            return false;
-        } 
-        else {
-        	
-            if (mapa.jogar(linha, coluna, letra)) {
-            	
-            	if(mapa.ganhou(letra)) 
-            		System.out.println("\nJogador ganhou!");
-            	
-                return true;
-            } 
-            else {
-                System.out.println("\nA posição já está ocupada!\n");
-                return false;
+        System.out.println("Jogador");
+
+        int linha;
+        int coluna;
+
+        boolean flag = false;
+
+        while (!flag) {
+            System.out.print("Digite a linha: ");
+            linha = teclado.nextInt();
+
+            System.out.print("Digite a coluna: ");
+            coluna = teclado.nextInt();
+
+            if (linha > 2 || linha < 0 || coluna > 2 || coluna < 0) {
+                System.out.println("\nEntrada fora dos limites do mapa!\n");
+                flag = false;
+            } else {
+                flag = mapa.jogar(linha, coluna, letra);
+                if (!flag) {
+                    System.out.println("A posiÃ§Ã£o jÃ¡ estÃ¡ ocupada!");
+                }
             }
         }
+
+        boolean ganhou = mapa.ganhou(letra);
+        if (ganhou) {
+            System.out.println("\nJogador ganhou!");
+        }
+
+        return ganhou;
     }
 }
