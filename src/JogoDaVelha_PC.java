@@ -16,7 +16,7 @@ public class JogoDaVelha_PC {
         boolean flag = mapa.jogar(linha, coluna, letra);
 
         while (!flag) {
-            //Loop at√© que o pc fa√ßa uma jogada v√°lida
+            //Loop atÈ que o pc faÁa uma jogada v·lida
             linha = mapa.sortear(0, 3);
             coluna = mapa.sortear(0, 3);
             flag = mapa.jogar(linha, coluna, letra);
