@@ -14,7 +14,7 @@ public class JogoDaVelha_Jogador {
         System.out.println("Jogador");
         int linha;
         int coluna;
-        //ForÃ§ando entrar no loop
+        //Forçando entrar no loop
         boolean flag = false;
 
         while (!flag) {
@@ -26,12 +26,12 @@ public class JogoDaVelha_Jogador {
 
             if (linha > 2 || linha < 0 || coluna > 2 || coluna < 0) {
                 System.out.println("\nEntrada fora dos limites do mapa!\n");
-                //Continua no loop atÃ© o jogador fazer uma jogada vÃ¡lida
+                //Continua no loop até o jogador fazer uma jogada válida
                 flag = false;
             } else {
                 flag = mapa.jogar(linha, coluna, letra);
                 if (!flag) {
-                    System.out.println("A posiÃ§Ã£o jÃ¡ estÃ¡ ocupada!");
+                    System.out.println("A posição já está ocupada!");
                 }
             }
         }

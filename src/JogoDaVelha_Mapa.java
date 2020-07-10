@@ -17,6 +17,9 @@ public class JogoDaVelha_Mapa {
 	}
 	
 	public void desenha(int jogada) {
+		
+		System.out.println("\n\t\t    JOGADA 0" + jogada);
+		
 //		System.out.println("|===============================================|");
 //		for(int i = 0; i < 3; i++) {
 //			System.out.print("|");
@@ -27,11 +30,10 @@ public class JogoDaVelha_Mapa {
 //			}
 //			System.out.println("|");
 //			if(i != 2)
-//				System.out.println("|===============================================|");
+//				System.out.println("|-----------------------------------------------|");
 //		}
-//		System.out.println("|===============================================	");
+//		System.out.println("|===============================================|\n");
 
-		System.out.println("\n\t\t    JOGADA 0" + jogada);
 		System.out.println("\n╔═══════════════════════════════════════════════╗");
 		for(int i = 0; i < 3; i++) {
 			System.out.print("║");

@@ -16,12 +16,12 @@ public class JogoDaVelha {
             int jogadorInicial = jogoMapa.sortear(0, 2);
             boolean pcJogando = jogadorInicial == 0;
 
-            for (int i = 1; i <= 10; i++) {
+            for (int i = 0; i <= 9; i++) {
 
-                if (i == 1)
+                if (i == 0)
                     System.out.println("\t\t  JOGO DA VELHA");
 
-                if (i == 10) {
+                if (i == 9) {
                     jogoMapa.desenha(i);
                     System.out.println("\nEmpate!");
                     break;
